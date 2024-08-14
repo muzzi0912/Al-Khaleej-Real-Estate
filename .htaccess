@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect all requests to the public folder
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+
+    # Block access to sensitive files and directories
+    <Files .env>
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    <Files ~ "^.*\.(yml|yaml|env|ini|conf|log|sh|inc|swp|dist)$">
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    <FilesMatch "^.*\.php$">
+        SetHandler application/x-httpd-php
+    </FilesMatch>
+
+    <FilesMatch "\.ph(ar|p|tml)$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    # <DirectoryMatch "^/app/(config|storage|vendor|tests)/">
+    #     Order allow,deny
+    #     Deny from all
+    # </DirectoryMatch>
+
+    # Hide the public directory from the URL
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+
+    # Redirect to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    # If mod_rewrite is not available, show an error message
+    ErrorDocument 500 "mod_rewrite is required but not enabled on this server."
+</IfModule>
