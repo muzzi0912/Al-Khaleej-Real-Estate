@@ -29,7 +29,7 @@
                 <div class="th-team team-card style4">
                     <div class="img-wrap">
                         <div class="team-img">
-                            <img src="{{asset('storage/'.$data->profile_image)}}" alt="Team">
+                            <img src="{{asset('/'.$data->profile_image)}}" alt="Team">
                         </div>
                     </div>
                     <div class="team-card-content">

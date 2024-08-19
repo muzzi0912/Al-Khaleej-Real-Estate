@@ -67,7 +67,7 @@
                         <div class="property-card2">
                             <div class="property-card-thumb img-shine">
                                 <a href="{{ route('projectsdetails', ['slug' => $data->slug]) }}">
-                                    <img src="{{asset('storage/'.$data->thumbnail_image)}}" alt="{{$data->project_name}}">
+                                    <img src="{{asset('/'.$data->thumbnail_image)}}" alt="{{$data->project_name}}">
                                 </a>
                             </div>
                             <div class="property-card-details">
@@ -77,7 +77,7 @@
                                     <p class="property-card-location">{{$data->project_address}}</p>
                                 </div>
                                 <div class="image-right img-shine">
-                                    <img src="{{asset('storage/'.$data->developer_image)}}" alt="img">
+                                    <img src="{{asset('/'.$data->developer_image)}}" alt="img">
                                 </div>
                             </div>
                             <div class="btn-wrap mt-3">
@@ -138,7 +138,7 @@
                             <div class="swiper-slide">
                                     <a href="{{ route('projectsdetails', ['slug' => $data->slug]) }}">
                                     <div class="box-img">
-                                        <img src="{{asset('storage/'.$data->thumbnail_image)}}" alt="{{$data->project_name}}">
+                                        <img src="{{asset('/'.$data->thumbnail_image)}}" alt="{{$data->project_name}}">
                                         <span class="slider-number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                                     </div>
                                 </a>
@@ -463,7 +463,7 @@
                     <div class="th-team team-card style3">
                         <div class="img-wrap">
                             <div class="team-img">
-                                <img src="{{asset('storage/'.$data->profile_image)}}"" alt="Team">
+                                <img src="{{asset('/'.$data->profile_image)}}"" alt="Team">
                             </div>
                         </div>
                         <div class="team-card-content">

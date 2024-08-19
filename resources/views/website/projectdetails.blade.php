@@ -5,7 +5,7 @@
 @section("section-wrapper")
 
 <div class="image-wrapper-custom">
-    <img src="{{asset('storage/'.$project->hero_image)}}" alt="">
+    <img src="{{asset('/'.$project->hero_image)}}" alt="">
 </div>
 
 
@@ -36,7 +36,7 @@
             </a>
         </div>
         <div class="nav-section-project">
-            <a class="project-section-item" href="{{asset('storage/'.$project->project_boucher_image)}}" target="blank">
+            <a class="project-section-item" href="{{asset('/'.$project->project_boucher_image)}}" target="blank">
                 <i class="fa-regular fa-file-pdf"></i>
                 <p>Brochure</p>
             </a>
@@ -75,7 +75,7 @@
                             @foreach ($project->project_images as $data )
                             <div class="swiper-slide">
                                 <div class="property-slider-img">
-                                    <img src="{{asset('storage/'.$data)}}" alt="{{$project->project_name}}">
+                                    <img src="{{asset('/'.$data)}}" alt="{{$project->project_name}}">
                                 </div>
                             </div>
                             @endforeach
@@ -87,7 +87,7 @@
                             @foreach ($project->project_images as $data )
                             <div class="swiper-slide">
                                 <div class="property-slider-img">
-                                    <img src="{{asset('storage/'.$data)}}" alt="{{$project->project_name}}">
+                                    <img src="{{asset('/'.$data)}}" alt="{{$project->project_name}}">
                                 </div>
                             </div>
                             @endforeach
@@ -115,7 +115,7 @@
                 <aside class="sidebar-area ">
                     <div class="widget widget-property-contact custom-widget">
                         <div class="image img-shine">
-                            <img src="{{asset('storage/'.$project->developer_image)}}" alt="img">
+                            <img src="{{asset('/'.$project->developer_image)}}" alt="img">
                         </div>
                         <h3 class="title">Price</h3>
                         <p class="widget_text">{{$project->price}}</p>
@@ -129,7 +129,7 @@
                         <h3 class="title">Agent Name</h3>
                         <div class="agent-name ">
                             <div class="left">
-                            <img src="{{asset('storage/'.$project->agent->profile_image)}}" alt="{{$project->agent->name}}">
+                            <img src="{{asset('/'.$project->agent->profile_image)}}" alt="{{$project->agent->name}}">
                             <p class="widget_text"><b>{{$project->agent->name}}</b></p>
                             </div>
                             <div class="right">
@@ -186,7 +186,7 @@
                 <div class="payment-plan-wrap" id="payment-plan">
                     <div class="payment-plan">
                         <div class="payment-left">
-                            <img src="{{asset('storage/'.$project->hero_image)}}" alt="About">
+                            <img src="{{asset('/'.$project->hero_image)}}" alt="About">
                         </div>
                         <div class="payment-right">
                             <h3 class="page-title mt-45 mb-30">Payment Plan</h3>
@@ -226,7 +226,7 @@
                     $randomIndex = array_rand($project->project_images);
                     $randomImage = $project->project_images[$randomIndex];
                     @endphp
-                    <img src="{{asset('storage/'.$randomImage)}}" alt="{{$project->project_name}}">
+                    <img src="{{asset('/'.$randomImage)}}" alt="{{$project->project_name}}">
                     <a href="{{$project->project_video}}" class="play-btn style4 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a>
                 </div>
 
@@ -240,7 +240,7 @@
                                 <div class="property-card2">
                                     <div class="property-card-thumb img-shine">
                                        <a href="{{ route('projectsdetails', ['slug' => $data->slug]) }}">
-                                        <img src="{{asset('storage/'.$data->thumbnail_image)}}" alt="img">
+                                        <img src="{{asset('/'.$data->thumbnail_image)}}" alt="img">
                                        </a>
                                     </div>
                                     <div class="property-card-details">
@@ -250,7 +250,7 @@
                                             <p class="property-card-location">{{$data->project_address}}</p>
                                         </div>
                                         <div class="image-right img-shine">
-                                            <img src="{{asset('storage/'.$data->developer_image)}}" alt="img">
+                                            <img src="{{asset('/'.$data->developer_image)}}" alt="img">
                                         </div>
 
                                     </div>

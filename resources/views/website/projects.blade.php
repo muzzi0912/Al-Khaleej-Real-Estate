@@ -27,7 +27,7 @@
                         <div class="property-card2">
                             <div class="property-card-thumb img-shine">
                                <a href="{{ route('projectsdetails', ['slug' => $data->slug]) }}">
-                                <img src="{{asset('storage/'.$data->thumbnail_image)}}" alt="{{$data->project_name}}">
+                                <img src="{{asset('/'.$data->thumbnail_image)}}" alt="{{$data->project_name}}">
                                </a>
                             </div>
                             <div class="property-card-details">
@@ -37,7 +37,7 @@
                                     <p class="property-card-location">{{$data->project_address}}</p>
                                 </div>
                                 <div class="image-right img-shine">
-                                    <img src="{{asset('storage/'.$data->developer_image)}}" alt="img">
+                                    <img src="{{asset('/'.$data->developer_image)}}" alt="img">
                                 </div>
 
                             </div>

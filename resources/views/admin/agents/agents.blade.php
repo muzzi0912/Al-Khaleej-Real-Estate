@@ -44,7 +44,7 @@
                             <td>{{$data->descignation}}</td>
                             <td>{{$data->whatsapp_number}}</td>
                             <td>{{$data->phone_number}}</td>
-                            <td><img src="{{asset('storage/'.$data->profile_image )}}" alt="Profile Image" class="img-fluid"
+                            <td><img src="{{asset('/'.$data->profile_image )}}" alt="Profile Image" class="img-fluid"
                                     style="max-width: 50px;"></td>
                             <td>{{$data->rating}}</td>
                             <td>
